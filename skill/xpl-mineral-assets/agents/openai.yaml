@@ -1,0 +1,3 @@
+interface:
+  display_name: "正交偏光矿物资产"
+  short_description: "参考真实薄片生成逼真XPL资产，支持单矿物整体语义掩膜及可计算光学试点"

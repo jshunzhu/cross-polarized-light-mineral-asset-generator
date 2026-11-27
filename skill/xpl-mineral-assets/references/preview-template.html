@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>矿物资产预览</title>
+<style>
+body{margin:0;background:#10151b;color:#e8edf3;font:15px system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:28px}h1{font-size:23px;margin:0 0 8px}.muted{color:#aebdca}section{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}.stage{max-width:650px;flex:1 1 480px}canvas{width:100%;display:block;background:repeating-conic-gradient(#1d2731 0% 25%,#263440 0% 50%) 50%/24px 24px;border:1px solid #506171;border-radius:8px}.controls{padding:18px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}input[type=range]{flex:1;min-width:190px;accent-color:#75dac9}button,select{background:#263743;color:#e8edf3;border:1px solid #59707e;border-radius:5px;padding:8px;cursor:pointer}aside{flex:1 1 250px;max-width:350px}pre{white-space:pre-wrap;word-break:break-word;font-size:12px}output{font-variant-numeric:tabular-nums;min-width:55px}.badge{display:inline-block;padding:4px 8px;background:#4a3c1e;border-radius:4px;font-size:12px}label{white-space:nowrap}
+</style>
+<main><h1 id="title"></h1><p class="muted">固定几何 · 理想正交偏光 · 角度变化按线性光计算</p>
+<section><div class="stage"><canvas id="view" aria-label="矿物光学响应"></canvas>
+<div class="controls"><button id="play">播放</button><input id="angle" aria-label="偏光角度" type="range" min="0" max="90" step="0.1" value="0"><output id="degrees">0.0°</output></div>
+<div class="controls"><label>显示 <select id="mode"><option value="optics">光学图像</option><option value="overlay">光学图像＋边界</option><option value="domains">光学分区</option><option value="mask">颗粒轮廓</option><option id="uncertainty-option" value="uncertainty" hidden>双晶分解敏感性</option></select></label><button id="export">导出当前角度 PNG</button></div>
+<p class="muted">图像呈黑色时，颗粒轮廓与标签依然存在。彩色分区图只编码区域编号，不代表矿物干涉色。</p></div>
+<aside><p class="badge" id="status"></p><p id="mineral"></p><p class="muted" id="uncertainty-note" hidden>双晶分解敏感性：青→红表示对扰动由低到高的敏感性；红端对应比例标准差 ≥ 0.18。此图不是分区正确概率，可能按较粗网格诊断。</p><pre id="details"></pre><p class="muted">自动检查验证结构和基础规律，外观需人工审核；浏览器导出为查看用 PNG，正式批量导出使用 Python 工具。</p></aside></section></main>
+<script>
+const asset=__ASSET_DATA__;
+function decode(s){let b=atob(s),v=new Uint8Array(b.length);for(let i=0;i<b.length;i++)v[i]=b.charCodeAt(i);return new Float32Array(v.buffer)}
+const base=decode(asset.base),phi=decode(asset.phi),alpha=decode(asset.alpha),domains=decode(asset.domains);
+const baseTwin=asset.baseTwin?decode(asset.baseTwin):null,phiTwin=asset.phiTwin?decode(asset.phiTwin):null;
+const uncertainty=asset.twinUncertainty?decode(asset.twinUncertainty):null;
+if(uncertainty){document.getElementById('uncertainty-option').hidden=false;document.getElementById('uncertainty-note').hidden=false}
+const canvas=document.getElementById('view'),ctx=canvas.getContext('2d'),slider=document.getElementById('angle'),mode=document.getElementById('mode');
+canvas.width=asset.w;canvas.height=asset.h;
+document.getElementById('title').textContent=asset.title;document.getElementById('status').textContent='审核状态：'+asset.metadata.review_status+' · 自动检查：'+asset.metadata.automated_checks;
+document.getElementById('mineral').textContent=asset.metadata.mineral;
+const stability=asset.metadata.twin_decomposition_stability;
+const stabilitySummary=stability?{stable:stability.stable,diagnosticShape:stability.diagnostic_shape,fractionStdP95:stability.fraction_std_p95,maxFractionChange:stability.max_mean_abs_fraction_change,maxDomainFlip:stability.max_dominant_domain_flip_fraction}:undefined;
+document.getElementById('details').textContent=JSON.stringify({profile:asset.metadata.profile,rock:asset.metadata.rock_context,renderPixels:asset.metadata.size,previewPixels:[asset.w,asset.h],parameters:asset.metadata.parameter_status,stability:stabilitySummary,limits:asset.metadata.limitations},null,2);
+function encode(v){v=Math.max(0,v);return Math.round(Math.max(0,Math.min(1,v<=.0031308?12.92*v:1.055*Math.pow(v,1/2.4)-.055))*255)}
+function draw(opticsOnly=false){const theta=Number(slider.value)*Math.PI/180,data=new Uint8ClampedArray(asset.w*asset.h*4);let display=opticsOnly?'optics':mode.value;
+for(let i=0;i<alpha.length;i++){let j=i*4;if(alpha[i]<=0)continue;let f=Math.sin(2*(theta-phi[i]))**2,ft=phiTwin?Math.sin(2*(theta-phiTwin[i]))**2:0;for(let c=0;c<3;c++)data[j+c]=encode(base[i*3+c]*f+(baseTwin?baseTwin[i*3+c]*ft:0));data[j+3]=Math.round(alpha[i]*255);
+if(display==='mask'){data[j]=180;data[j+1]=223;data[j+2]=235}
+if(display==='domains'){let d=domains[i];data[j]=70+(d*71)%170;data[j+1]=70+(d*113)%170;data[j+2]=70+(d*41)%170}
+if(display==='uncertainty'&&uncertainty){let u=Math.min(1,uncertainty[i]/.18);data[j]=Math.round(35+220*u);data[j+1]=Math.round(200-150*u);data[j+2]=Math.round(215-160*u)}
+if(display==='overlay'){let x=i%asset.w,y=Math.floor(i/asset.w),d=domains[i];if(x===0||y===0||x===asset.w-1||y===asset.h-1||domains[i-1]!==d||domains[i+1]!==d||domains[i-asset.w]!==d||domains[i+asset.w]!==d){data[j]=120;data[j+1]=255;data[j+2]=215;data[j+3]=255}}}
+ctx.putImageData(new ImageData(data,asset.w,asset.h),0,0);document.getElementById('degrees').textContent=Number(slider.value).toFixed(1)+'°';return data}
+slider.addEventListener('input',()=>draw());mode.addEventListener('change',()=>draw());
+let playing=false,last=0;document.getElementById('play').onclick=()=>{playing=!playing;document.getElementById('play').textContent=playing?'暂停':'播放';if(playing)requestAnimationFrame(tick)};
+function tick(t){if(!playing)return;if(t-last>90){slider.value=((Number(slider.value)+1)%90).toFixed(1);draw();last=t}requestAnimationFrame(tick)}
+document.getElementById('export').onclick=()=>{draw(true);let a=document.createElement('a');a.download=asset.title+'-'+slider.value+'deg.png';a.href=canvas.toDataURL('image/png');a.click();draw()};
+draw();window.xplPreview={draw,asset,linearPixel:(i,a)=>Array.from(base.slice(i*3,i*3+3),(v,c)=>v*Math.sin(2*(a*Math.PI/180-phi[i]))**2+(baseTwin?baseTwin[i*3+c]*Math.sin(2*(a*Math.PI/180-phiTwin[i]))**2:0))};
+</script></html>

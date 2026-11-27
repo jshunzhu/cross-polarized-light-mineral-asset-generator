@@ -1,0 +1,2634 @@
+{
+  "profile_defaults": {
+    "quartz-uniform": [
+      "uniform-extinction"
+    ],
+    "quartz-undulose": [
+      "undulose-extinction"
+    ],
+    "plagioclase-twins": [
+      "albite-twinning"
+    ],
+    "plagioclase-reference-twins": [
+      "albite-twinning"
+    ],
+    "almandine-isotropic": [
+      "ideal-isotropic"
+    ]
+  },
+  "entries": [
+    {
+      "id": "uniform-extinction",
+      "name_zh": "均匀消光",
+      "aliases": [
+        "均匀消光",
+        "uniform extinction",
+        "uniform phase",
+        "均一消光"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "supported",
+      "reason": "仅支持现有理想、非吸收且单一方位的均匀延迟模型；均匀消光不证明平行或对称消光。",
+      "compatible_phases": [
+        "uniform"
+      ],
+      "compatible_minerals": [],
+      "incompatible_with": [
+        "undulose-extinction",
+        "albite-twinning",
+        "ideal-isotropic",
+        "parallel-extinction",
+        "symmetrical-extinction",
+        "birdseye-extinction",
+        "patchy-extinction",
+        "zonal-extinction",
+        "sector-extinction"
+      ],
+      "reference_ids": []
+    },
+    {
+      "id": "undulose-extinction",
+      "name_zh": "石英波状消光近似",
+      "aliases": [
+        "波状消光",
+        "石英波状消光",
+        "undulose extinction",
+        "undulatory extinction",
+        "wavy extinction"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "supported",
+      "reason": "仅支持石英的平滑方位场近似及其角度响应；不能宣称亚晶界、实际晶格、应变或成因的真值。",
+      "compatible_phases": [
+        "undulose"
+      ],
+      "compatible_minerals": [
+        "Quartz",
+        "石英"
+      ],
+      "incompatible_with": [
+        "uniform-extinction",
+        "albite-twinning",
+        "ideal-isotropic",
+        "subgrain-boundaries",
+        "lattice-curvature"
+      ],
+      "reference_ids": [
+        "quartz-undulose"
+      ]
+    },
+    {
+      "id": "albite-twinning",
+      "name_zh": "斜长石钠长石律双晶近似",
+      "aliases": [
+        "钠长石律双晶",
+        "钠长石双晶",
+        "钠长石律",
+        "albite twinning",
+        "albite-law twinning",
+        "albite twin law",
+        "斜长石钠长石律双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "supported",
+      "reason": "仅支持斜长石albite-reference真实参考引导外观、图像估计分区和钠长石律张量对；分区非唯一，须人工验收。",
+      "compatible_phases": [
+        "albite-reference"
+      ],
+      "compatible_minerals": [
+        "Plagioclase Feldspar",
+        "斜长石"
+      ],
+      "incompatible_with": [
+        "uniform-extinction",
+        "undulose-extinction",
+        "ideal-isotropic",
+        "pericline-twinning",
+        "carlsbad-twinning",
+        "carlsbad-albite-twinning",
+        "tartan-twinning",
+        "deformation-twinning"
+      ],
+      "reference_ids": [
+        "plagioclase-albite"
+      ]
+    },
+    {
+      "id": "ideal-isotropic",
+      "name_zh": "铁铝榴石理想各向同性",
+      "aliases": [
+        "理想各向同性",
+        "铁铝榴石理想各向同性",
+        "ideal isotropic",
+        "ideal isotropy",
+        "isotropic almandine"
+      ],
+      "category": "optical_modalities",
+      "scope": "single_grain",
+      "status": "supported",
+      "reason": "仅支持铁铝榴石零延迟的理想各向同性模型；不适用于异常双折射、包裹体或所有石榴子石成员。",
+      "compatible_phases": [
+        "isotropic"
+      ],
+      "compatible_minerals": [
+        "Almandine",
+        "铁铝榴石"
+      ],
+      "incompatible_with": [
+        "uniform-extinction",
+        "undulose-extinction",
+        "albite-twinning",
+        "anomalous-birefringence",
+        "anomalous-interference-colours",
+        "zonal-extinction",
+        "sector-extinction"
+      ],
+      "reference_ids": []
+    },
+    {
+      "id": "parallel-extinction",
+      "name_zh": "平行消光",
+      "aliases": [
+        "平行消光",
+        "parallel extinction",
+        "straight extinction",
+        "直消光"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有均匀消光模型没有约束消光方位与可辨识晶轴、解理或晶面迹线的关系，不能生成并验收平行消光。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "inclined-extinction",
+      "name_zh": "斜消光",
+      "aliases": [
+        "斜消光",
+        "inclined extinction",
+        "oblique extinction",
+        "倾斜消光"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有试点未建立目标矿物切面中消光角与晶体标志的对应关系，不能把任意旋转的暗态标作斜消光。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "symmetrical-extinction",
+      "name_zh": "对称消光",
+      "aliases": [
+        "对称消光",
+        "symmetrical extinction",
+        "symmetric extinction"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型没有把振动方向与两组对称解理或晶面迹线的角平分线绑定，不能证明对称消光。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "birdseye-extinction",
+      "name_zh": "斑驳消光",
+      "aliases": [
+        "斑驳消光",
+        "birdseye extinction",
+        "bird's eye extinction",
+        "bird’s eye extinction",
+        "鸟眼消光",
+        "鸟眼状消光",
+        "云母斑驳消光"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型未表达接近消光时的斑驳角度响应，固定黑点或亮点不能替代该现象。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "biotite-birdseye"
+      ]
+    },
+    {
+      "id": "patchy-extinction",
+      "name_zh": "斑块消光",
+      "aliases": [
+        "斑块消光",
+        "patchy extinction",
+        "斑状消光"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "单幅斑块明暗不能区分晶内取向差、多个晶粒或成分差，现有模型不足以生成并验收该指定现象。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "quartz-undulose"
+      ]
+    },
+    {
+      "id": "sector-extinction",
+      "name_zh": "分区消光",
+      "aliases": [
+        "分区消光",
+        "sector extinction",
+        "分扇区消光"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型没有目标矿物分区的取向或光学关系，不能用任意扇区填色替代分区消光。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "garnet-anomalous-zoning",
+        "cordierite-cyclic-twins"
+      ]
+    },
+    {
+      "id": "zonal-extinction",
+      "name_zh": "环带消光",
+      "aliases": [
+        "环带消光",
+        "zonal extinction",
+        "zoned extinction"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型没有成分环带与消光方位变化的耦合，不能以同心明暗环代替环带消光。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-concentric-zoning"
+      ]
+    },
+    {
+      "id": "incomplete-extinction",
+      "name_zh": "不完全消光",
+      "aliases": [
+        "不完全消光",
+        "incomplete extinction",
+        "不全消光"
+      ],
+      "category": "extinction",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "剩余亮度可能涉及叠晶、应变、散射或仪器条件，现有理想模型不能指定并验收不完全消光的原因。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "simple-twinning",
+      "name_zh": "简单双晶",
+      "aliases": [
+        "简单双晶",
+        "simple twinning",
+        "简单双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "两域外观不等于已知双晶律；现有真实资产试点仅实现斜长石钠长石律，不能按泛称生成其他简单双晶。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "sanidine-carlsbad-atlas",
+        "raith-augite-simple"
+      ]
+    },
+    {
+      "id": "polysynthetic-twinning",
+      "name_zh": "聚片双晶",
+      "aliases": [
+        "聚片双晶",
+        "polysynthetic twinning",
+        "lamellar twinning",
+        "片状双晶",
+        "聚片状双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "聚片是形态类别而非唯一双晶律；必须明确矿物与双晶律后选择已支持项，不能直接套用斜长石条纹。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "pericline-twinning",
+      "name_zh": "肖钠长石律双晶",
+      "aliases": [
+        "肖钠长石律双晶",
+        "pericline twinning",
+        "pericline twin law",
+        "肖钠长石双晶",
+        "肖钠长石律"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型仅有钠长石律张量对，未实现肖钠长石律及其切面关系。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-complex-twins"
+      ]
+    },
+    {
+      "id": "carlsbad-twinning",
+      "name_zh": "卡式双晶",
+      "aliases": [
+        "卡式双晶",
+        "Carlsbad twinning",
+        "Karlsbad twinning",
+        "卡尔斯巴双晶",
+        "卡式律"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型未实现卡式双晶操作，不能把两半不同明暗当作已验证卡式双晶。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "sanidine-carlsbad-atlas",
+        "orthoclase-carlsbad-atlas",
+        "raith-sanidine-carlsbad"
+      ]
+    },
+    {
+      "id": "carlsbad-albite-twinning",
+      "name_zh": "卡钠复合双晶",
+      "aliases": [
+        "卡钠复合双晶",
+        "Carlsbad-albite twinning",
+        "albite-Carlsbad twins",
+        "卡式钠长石复合双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "钠长石律试点不包含卡式操作及复合域，不能增加一条分界线冒充复合双晶。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-complex-twins"
+      ]
+    },
+    {
+      "id": "tartan-twinning",
+      "name_zh": "格子双晶",
+      "aliases": [
+        "格子双晶",
+        "tartan twinning",
+        "cross-hatched twinning",
+        "crosshatch twinning",
+        "微斜长石格子双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型未耦合钠长石律与肖钠长石律，规整棋盘格不能替代常见弥散、梭状交叉双晶。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "microcline-tartan"
+      ]
+    },
+    {
+      "id": "cyclic-twinning",
+      "name_zh": "轮式双晶",
+      "aliases": [
+        "轮式双晶",
+        "cyclic twinning",
+        "cyclic twin",
+        "环状双晶",
+        "堇青石轮式双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型未表达堇青石轮式双晶的晶体学域关系，不能以放射扇形填色替代。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "cordierite-cyclic-twins",
+        "raith-cordierite-cyclic"
+      ]
+    },
+    {
+      "id": "deformation-twinning",
+      "name_zh": "变形双晶",
+      "aliases": [
+        "变形双晶",
+        "deformation twinning",
+        "mechanical twinning",
+        "机械双晶",
+        "应变双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有钠长石律试点不能证明变形机制，也未实现目标矿物的变形双晶形态与光学耦合。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "calcite-deformation-twins"
+      ]
+    },
+    {
+      "id": "growth-twinning",
+      "name_zh": "生长双晶",
+      "aliases": [
+        "生长双晶",
+        "growth twinning",
+        "原生双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "双晶外观及钠长石律模型不能证明生长成因，缺少对应生成与成因验收证据。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "raith-k-feldspar-baveno",
+        "orthoclase-growth-context"
+      ]
+    },
+    {
+      "id": "contact-twinning",
+      "name_zh": "接触双晶",
+      "aliases": [
+        "接触双晶",
+        "contact twinning",
+        "接触式双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型没有泛用接触双晶几何、双晶面与切面关系，不能把相邻晶粒拼接为接触双晶。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "raith-k-feldspar-baveno"
+      ]
+    },
+    {
+      "id": "penetration-twinning",
+      "name_zh": "穿插双晶",
+      "aliases": [
+        "穿插双晶",
+        "penetration twinning",
+        "贯穿双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "穿插双晶的三维贯穿与薄片截交关系未建模，不能把重叠多个颗粒当作单颗粒资产。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "raith-staurolite-penetration",
+        "staurolite-penetration-atlas"
+      ]
+    },
+    {
+      "id": "baveno-twinning",
+      "name_zh": "巴温诺双晶",
+      "aliases": [
+        "巴温诺双晶",
+        "Baveno twinning",
+        "巴文诺双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "真实参考现已补齐，可生成有边界说明的外观候选；尚未实现该双晶律的专属物理取向、角度响应及域标签模型。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "raith-k-feldspar-baveno"
+      ]
+    },
+    {
+      "id": "manebach-twinning",
+      "name_zh": "曼尼巴双晶",
+      "aliases": [
+        "曼尼巴双晶",
+        "Manebach twinning",
+        "曼巴赫双晶",
+        "曼尼巴赫双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "真实参考现已补齐，可生成有边界说明的外观候选；尚未实现该双晶律的专属物理取向、角度响应及域标签模型。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "sanidine-manebach-ingerson"
+      ]
+    },
+    {
+      "id": "dauphine-twinning",
+      "name_zh": "道芬双晶",
+      "aliases": [
+        "道芬双晶",
+        "Dauphiné twinning",
+        "Dauphine twinning",
+        "道芬律双晶"
+      ],
+      "category": "twinning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "普通未经蚀刻偏光显微镜下不可直接辨认；保留文献成像限制，不提供蚀刻晶片或EBSD照片作为XPL参考，亦无该物理模型。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "normal-zoning",
+      "name_zh": "正常环带",
+      "aliases": [
+        "正常环带",
+        "normal zoning",
+        "正常分带",
+        "正环带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "正常环带需依矿物的成分变化方向定义；现有模型无成分—光学耦合，不能按明暗环命名。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-concentric-zoning",
+        "plagioclase-oscillatory-zoning"
+      ]
+    },
+    {
+      "id": "reverse-zoning",
+      "name_zh": "反环带",
+      "aliases": [
+        "反环带",
+        "reverse zoning",
+        "reversed zoning",
+        "逆环带",
+        "反向环带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "反环带需有与已指定正常趋势相反的成分证据；XPL由暗变亮不能定义反环带。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-concentric-zoning"
+      ]
+    },
+    {
+      "id": "oscillatory-zoning",
+      "name_zh": "振荡环带",
+      "aliases": [
+        "振荡环带",
+        "oscillatory zoning",
+        "振荡分带",
+        "韵律环带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "重复明暗环不能证明成分振荡，现有模型无振荡成分与光学关系。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-oscillatory-zoning"
+      ]
+    },
+    {
+      "id": "sector-zoning",
+      "name_zh": "扇区环带",
+      "aliases": [
+        "扇区环带",
+        "sector zoning",
+        "扇形分带",
+        "扇区分带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型未表达不同生长扇区的成分与光学关系，不能以双晶扇区代替。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "augite-hourglass-zoning"
+      ]
+    },
+    {
+      "id": "hourglass-zoning",
+      "name_zh": "沙漏状环带",
+      "aliases": [
+        "沙漏状环带",
+        "hourglass zoning",
+        "hour-glass zoning",
+        "沙漏状分带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "沙漏状扇区分带的具体切面与成分—光学耦合未实现，不能用沙漏图案替代。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "augite-hourglass-zoning"
+      ]
+    },
+    {
+      "id": "patchy-zoning",
+      "name_zh": "斑块环带",
+      "aliases": [
+        "斑块环带",
+        "patchy zoning",
+        "irregular zoning",
+        "斑块状分带",
+        "不规则分带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "斑块成分分区不能由随机噪声或斑块消光代替，当前模型不能验证。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "zoisite-patchy-zoning",
+        "plagioclase-oscillatory-zoning"
+      ]
+    },
+    {
+      "id": "core-rim-zoning",
+      "name_zh": "核边环带",
+      "aliases": [
+        "核边环带",
+        "core-rim zoning",
+        "core rim zoning",
+        "核边结构"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "同一固溶体的核边分区尚无模型；若核与边是不同物相则超出范围并拒绝。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-concentric-zoning"
+      ]
+    },
+    {
+      "id": "continuous-zoning",
+      "name_zh": "连续环带",
+      "aliases": [
+        "连续环带",
+        "continuous zoning",
+        "连续分带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型无连续成分梯度的光学响应，不能以平滑渐变填色证明。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-concentric-zoning"
+      ]
+    },
+    {
+      "id": "discontinuous-zoning",
+      "name_zh": "间断环带",
+      "aliases": [
+        "间断环带",
+        "discontinuous zoning",
+        "discontinuous compositional zoning",
+        "不连续环带",
+        "突变环带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "成分突变边界及可能的生长间断未耦合光学模型，不能以硬边明暗环替代。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-oscillatory-zoning"
+      ]
+    },
+    {
+      "id": "concentric-zoning",
+      "name_zh": "同心环带",
+      "aliases": [
+        "同心环带",
+        "concentric zoning",
+        "同心分带",
+        "同心状环带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "同心仅描述几何，不定义正常或反向成分趋势；现有模型未实现该环带响应。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-concentric-zoning"
+      ]
+    },
+    {
+      "id": "resorption-truncated-zoning",
+      "name_zh": "熔蚀截切环带",
+      "aliases": [
+        "熔蚀截切环带",
+        "resorption-truncated zoning",
+        "truncated zoning",
+        "截切分带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "环带被熔蚀面截切的形态与后续光学响应未实现，不能随意切断同心线条。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-oscillatory-zoning"
+      ]
+    },
+    {
+      "id": "superposed-zoning",
+      "name_zh": "叠加环带",
+      "aliases": [
+        "叠加环带",
+        "superposed zoning",
+        "composite zoning",
+        "复合环带",
+        "叠加分带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "多种成分或生长分区的空间叠加未建模，不能删掉其中困难特征后生成。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "plagioclase-oscillatory-zoning"
+      ]
+    },
+    {
+      "id": "growth-banding",
+      "name_zh": "生长条带",
+      "aliases": [
+        "生长条带",
+        "growth banding",
+        "growth bands",
+        "生长环带"
+      ],
+      "category": "zoning",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "生长条带的实际记录方式与成分或缺陷关系未明确，现有模型不能按条带外观给出成因。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "kink-bands",
+      "name_zh": "扭折带",
+      "aliases": [
+        "扭折带",
+        "kink bands",
+        "kink band",
+        "折带",
+        "扭折"
+      ],
+      "category": "intracrystalline_deformation",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型没有把晶内方向突变与解理相应转折耦合，画深色楔形带不能证明扭折。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "kyanite-kink",
+        "biotite-kink"
+      ]
+    },
+    {
+      "id": "bent-cleavage",
+      "name_zh": "弯曲解理",
+      "aliases": [
+        "弯曲解理",
+        "bent cleavage",
+        "curved cleavage",
+        "弯折解理"
+      ],
+      "category": "intracrystalline_deformation",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型未把解理弯曲与晶格方向、消光变化绑定，不能只弯曲线条。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "biotite-kink"
+      ]
+    },
+    {
+      "id": "deformation-lamellae",
+      "name_zh": "变形纹层",
+      "aliases": [
+        "变形纹层",
+        "deformation lamellae",
+        "deformation lamella",
+        "变形片晶"
+      ],
+      "category": "intracrystalline_deformation",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型无法区分并验证目标纹层的变形结构、取向和光学响应。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "calcite-deformation-twins"
+      ]
+    },
+    {
+      "id": "lattice-curvature",
+      "name_zh": "连续晶格弯曲",
+      "aliases": [
+        "连续晶格弯曲",
+        "lattice curvature",
+        "continuous lattice bending",
+        "晶格弯曲"
+      ],
+      "category": "intracrystalline_deformation",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "石英波状消光近似仅指定平滑方位场，不能据此宣称已实现或测量真实连续晶格弯曲。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "quartz-undulose"
+      ]
+    },
+    {
+      "id": "deformation-bands",
+      "name_zh": "变形带",
+      "aliases": [
+        "变形带",
+        "deformation bands",
+        "deformation band",
+        "晶内变形带"
+      ],
+      "category": "intracrystalline_deformation",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型未区分变形带内部取向及边界结构，不能用任意平行暗带替代。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "kyanite-kink"
+      ]
+    },
+    {
+      "id": "subgrain-boundaries",
+      "name_zh": "亚晶界",
+      "aliases": [
+        "亚晶界",
+        "subgrain boundaries",
+        "subgrain boundary",
+        "亚晶结构",
+        "subgrains"
+      ],
+      "category": "intracrystalline_deformation",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "石英波状试点不证明亚晶界或亚晶结构；现有模型没有可验收低角度边界及三维连续性。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "quartz-undulose"
+      ]
+    },
+    {
+      "id": "planar-deformation-features",
+      "name_zh": "平面变形特征",
+      "aliases": [
+        "平面变形特征",
+        "planar deformation features",
+        "PDFs",
+        "冲击变形纹层",
+        "冲击平面变形特征"
+      ],
+      "category": "intracrystalline_deformation",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "普通XPL条纹不足以确证冲击平面变形特征，现有模型与专属证据不足。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "bulging-recrystallization",
+      "name_zh": "鼓胀重结晶",
+      "aliases": [
+        "鼓胀重结晶",
+        "bulging recrystallization",
+        "BLG",
+        "晶界鼓胀重结晶"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "鼓胀重结晶需要母晶、迁移晶界与新生晶粒关系，涉及多个颗粒，超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "subgrain-rotation-recrystallization",
+      "name_zh": "亚晶旋转重结晶",
+      "aliases": [
+        "亚晶旋转重结晶",
+        "subgrain rotation recrystallization",
+        "SGR",
+        "旋转重结晶"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "亚晶旋转重结晶涉及新生独立晶粒及母晶关系，即使同矿物也属于多颗粒。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "grain-boundary-migration",
+      "name_zh": "晶界迁移重结晶",
+      "aliases": [
+        "晶界迁移重结晶",
+        "grain boundary migration recrystallization",
+        "GBM",
+        "晶界迁移"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "晶界迁移重结晶需要相邻晶粒及迁移界面的关系，不能作为单颗粒内部光学分区生成。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "neoblasts",
+      "name_zh": "新生晶粒",
+      "aliases": [
+        "新生晶粒",
+        "neoblasts",
+        "recrystallized grains",
+        "重结晶新生晶粒"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "母晶与新生晶粒构成多个颗粒，即使矿物名称相同也超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "porphyroclastic-texture",
+      "name_zh": "碎斑结构",
+      "aliases": [
+        "碎斑结构",
+        "porphyroclastic texture",
+        "porphyroclast",
+        "porphyroclasts",
+        "残斑结构"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "碎斑结构需要残留大晶粒与细粒基质及变形关系，属于多颗粒结构。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "mortar-texture",
+      "name_zh": "砂浆结构",
+      "aliases": [
+        "砂浆结构",
+        "mortar texture",
+        "mortar structure",
+        "碎裂砂浆结构"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "粗晶残核及其周围细碎颗粒共同定义砂浆结构，属于多个颗粒。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "pressure-shadows",
+      "name_zh": "压力影",
+      "aliases": [
+        "压力影",
+        "pressure shadows",
+        "strain shadows",
+        "strain fringes",
+        "应变影",
+        "应变尾"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "压力影需要刚性颗粒与周围生长或变形矿物的关系，属于多颗粒或多相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "polycrystalline-ribbons",
+      "name_zh": "多晶条带",
+      "aliases": [
+        "多晶条带",
+        "polycrystalline ribbons",
+        "quartz ribbons",
+        "石英多晶条带"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "多晶条带包含多个晶粒及其排列，即使全是石英也超出单颗粒范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "cataclastic-fragments",
+      "name_zh": "碎裂结构",
+      "aliases": [
+        "碎裂结构",
+        "cataclastic texture",
+        "cataclasis",
+        "角砾碎片结构",
+        "碎裂颗粒"
+      ],
+      "category": "recrystallization",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "碎裂结构需要多个独立碎片及其基质关系，不能用同一外轮廓变为单颗粒。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "perthite",
+      "name_zh": "条纹长石结构",
+      "aliases": [
+        "条纹长石结构",
+        "perthite",
+        "perthitic texture",
+        "条纹长石"
+      ],
+      "category": "exsolution",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "条纹长石需要钾长石主晶与钠质长石出溶相，属于多物相，超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "perthite"
+      ]
+    },
+    {
+      "id": "antiperthite",
+      "name_zh": "反条纹长石结构",
+      "aliases": [
+        "反条纹长石结构",
+        "antiperthite",
+        "antiperthitic texture",
+        "反条纹长石"
+      ],
+      "category": "exsolution",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "反条纹长石需要钠质斜长石主晶与钾长石出溶相，属于多物相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "antiperthite"
+      ]
+    },
+    {
+      "id": "mesoperthite",
+      "name_zh": "中条纹长石结构",
+      "aliases": [
+        "中条纹长石结构",
+        "mesoperthite",
+        "mesoperthitic texture",
+        "中条纹长石"
+      ],
+      "category": "exsolution",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "中条纹长石涉及共存的钾质和钠质长石相，不能因含量接近或外轮廓相同而视作单相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "pyroxene-exsolution-lamellae",
+      "name_zh": "辉石出溶条带",
+      "aliases": [
+        "辉石出溶条带",
+        "pyroxene exsolution lamellae",
+        "辉石出溶片晶",
+        "辉石出溶条纹"
+      ],
+      "category": "exsolution",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "辉石出溶条带包含主晶与成分不同的出溶相，属于多物相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "vermicular-exsolution",
+      "name_zh": "蠕虫状出溶",
+      "aliases": [
+        "蠕虫状出溶",
+        "vermicular exsolution",
+        "wormy exsolution",
+        "蠕状出溶"
+      ],
+      "category": "exsolution",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "蠕虫状出溶仍由主晶和出溶相构成，不能因纹理细小省略物相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "bleb-exsolution",
+      "name_zh": "滴状出溶",
+      "aliases": [
+        "滴状出溶",
+        "bleb exsolution",
+        "bleb-like exsolution",
+        "滴状出溶体"
+      ],
+      "category": "exsolution",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "滴状出溶体属于与主晶不同的物相，同一颗粒外轮廓内也超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "trellis-exsolution",
+      "name_zh": "格架状出溶",
+      "aliases": [
+        "格架状出溶",
+        "trellis exsolution",
+        "trellis texture",
+        "格子状出溶"
+      ],
+      "category": "exsolution",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "格架状出溶由主晶和出溶相组成，不能因交叉形态类似格子双晶而当作单相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "rutile-exsolution-in-mica",
+      "name_zh": "云母中金红石出溶",
+      "aliases": [
+        "云母中金红石出溶",
+        "rutile exsolution in mica",
+        "rutile needles in biotite",
+        "黑云母金红石出溶"
+      ],
+      "category": "exsolution",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "云母与金红石针晶是不同物相，即使针晶细小仍超出单矿物单相范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "reaction-rims",
+      "name_zh": "反应边",
+      "aliases": [
+        "反应边",
+        "reaction rims",
+        "reaction rim",
+        "反应边结构"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "反应边需要原矿物与反应产物或邻相的关系，属于多个物相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "quartz-reaction-corona"
+      ]
+    },
+    {
+      "id": "corona-texture",
+      "name_zh": "冠状结构",
+      "aliases": [
+        "冠状结构",
+        "corona texture",
+        "corona",
+        "coronas",
+        "反应冠",
+        "冠状反应边"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "反应冠由核心矿物和周围反应相构成，同一环状外轮廓不能变成单相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "quartz-reaction-corona"
+      ]
+    },
+    {
+      "id": "kelyphitic-texture",
+      "name_zh": "凯利菲特结构",
+      "aliases": [
+        "凯利菲特结构",
+        "kelyphitic texture",
+        "kelyphite",
+        "kelyphitic rim",
+        "凯利菲特反应边"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "凯利菲特边涉及石榴子石等原矿物及细粒反应产物，属于多相结构。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "garnet-kelyphitic-rim"
+      ]
+    },
+    {
+      "id": "sericitization",
+      "name_zh": "绢云母化",
+      "aliases": [
+        "绢云母化",
+        "sericitization",
+        "sericite alteration",
+        "绢云母蚀变"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "长石等主矿物与绢云母蚀变产物是不同物相，不属于单矿物资产。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "chloritization",
+      "name_zh": "绿泥石化",
+      "aliases": [
+        "绿泥石化",
+        "chloritization",
+        "chlorite alteration",
+        "绿泥石蚀变"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "原矿物与绿泥石替代产物涉及多物相，不能只改变主晶颜色。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "serpentinization",
+      "name_zh": "蛇纹石化",
+      "aliases": [
+        "蛇纹石化",
+        "serpentinization",
+        "serpentine alteration",
+        "蛇纹石蚀变"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "橄榄石等原矿物与蛇纹石及可能的其他产物构成多物相关系。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "uralitization",
+      "name_zh": "纤闪石化",
+      "aliases": [
+        "纤闪石化",
+        "uralitization",
+        "uralite",
+        "辉石角闪石化"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "辉石被角闪石类替代涉及原矿物与新物相，超出单矿物范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "saussuritization",
+      "name_zh": "黝帘石化",
+      "aliases": [
+        "黝帘石化",
+        "saussuritization",
+        "saussurite alteration",
+        "斜长石黝帘石化"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "斜长石的黝帘石化涉及多种替代产物，不能作为同一斜长石的分区模型。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "epidotization",
+      "name_zh": "绿帘石化",
+      "aliases": [
+        "绿帘石化",
+        "epidotization",
+        "epidote alteration",
+        "绿帘石蚀变"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "原矿物和绿帘石类替代相构成多物相，超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "carbonatization",
+      "name_zh": "碳酸盐化",
+      "aliases": [
+        "碳酸盐化",
+        "carbonatization",
+        "carbonate alteration",
+        "碳酸盐交代"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "碳酸盐交代要求表达原矿物与新生碳酸盐的关系，属于多相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "pseudomorphic-replacement",
+      "name_zh": "假象替代",
+      "aliases": [
+        "假象替代",
+        "pseudomorphic replacement",
+        "pseudomorph",
+        "假象结构",
+        "假象交代"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "假象保留原外形但物质已被替代，所要求的交代关系不是单一原矿物颗粒。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "opacite-rims",
+      "name_zh": "暗化边",
+      "aliases": [
+        "暗化边",
+        "opacite rims",
+        "opacite rim",
+        "不透明反应边",
+        "暗色反应边"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "暗化边是细粒反应产物集合及其与主晶关系，不能作为主晶固定黑边。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "pinitization",
+      "name_zh": "绢云母绿泥石化堇青石",
+      "aliases": [
+        "绢云母绿泥石化堇青石",
+        "pinitization",
+        "pinite alteration",
+        "pinite",
+        "堇青石绢云母化"
+      ],
+      "category": "alteration_reaction",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "堇青石的pinite替代物涉及新物相，保留原晶形也超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "myrmekite",
+      "name_zh": "蠕英结构",
+      "aliases": [
+        "蠕英结构",
+        "myrmekite",
+        "myrmekitic texture",
+        "蠕英交生"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "蠕英结构需要石英与钠质斜长石等相的交生及邻相关系，属于多矿物结构。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "myrmekite"
+      ]
+    },
+    {
+      "id": "graphic-intergrowth",
+      "name_zh": "文象结构",
+      "aliases": [
+        "文象结构",
+        "graphic intergrowth",
+        "graphic texture",
+        "文象交生"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "文象结构需要石英与长石的定向交生，属于多矿物。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "graphic-intergrowth"
+      ]
+    },
+    {
+      "id": "micrographic-intergrowth",
+      "name_zh": "微文象结构",
+      "aliases": [
+        "微文象结构",
+        "micrographic intergrowth",
+        "micrographic texture",
+        "微文象交生"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "微文象虽尺度细小，仍包含不同矿物的交生关系。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "graphic-intergrowth"
+      ]
+    },
+    {
+      "id": "granophyric-intergrowth",
+      "name_zh": "微花岗交生",
+      "aliases": [
+        "微花岗交生",
+        "granophyric intergrowth",
+        "granophyric texture",
+        "花岗斑状交生"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "微花岗交生涉及石英与长石等多相关系，超出单矿物资产范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "symplectitic-intergrowth",
+      "name_zh": "后成合晶结构",
+      "aliases": [
+        "后成合晶结构",
+        "symplectitic intergrowth",
+        "symplectite",
+        "symplectic texture",
+        "蠕虫状合晶"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "后成合晶是两种或更多矿物的细粒交生反应结构，属于多相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "poikilitic-texture",
+      "name_zh": "包含结构",
+      "aliases": [
+        "包含结构",
+        "poikilitic texture",
+        "poikiloblastic texture",
+        "嵌晶包含结构",
+        "变嵌晶结构"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "主晶包围其他晶粒的包含结构涉及多个晶粒，通常也涉及多个物相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "epitaxial-intergrowth",
+      "name_zh": "外延共生",
+      "aliases": [
+        "外延共生",
+        "epitaxial intergrowth",
+        "epitaxy",
+        "外延生长",
+        "定向连生"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "所请求的矿物间外延共生需要两种矿物的晶格关系，属于多物相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "mineral-inclusions",
+      "name_zh": "矿物包裹体",
+      "aliases": [
+        "矿物包裹体",
+        "mineral inclusions",
+        "mineral inclusion",
+        "固体矿物包裹体"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "主晶中的矿物包裹体属于独立晶粒或物相，即使被主晶完全包围也超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "glass-inclusions",
+      "name_zh": "玻璃包裹体",
+      "aliases": [
+        "玻璃包裹体",
+        "glass inclusions",
+        "glass inclusion",
+        "熔体包裹体",
+        "melt inclusions"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "玻璃或熔体包裹体与主矿物为不同物相，不属于单一矿物资产。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "fluid-inclusions",
+      "name_zh": "流体包裹体",
+      "aliases": [
+        "流体包裹体",
+        "fluid inclusions",
+        "fluid inclusion",
+        "液体包裹体",
+        "气液包裹体"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "流体或气液包裹体与主矿物构成多物相，即使无固体包体仍超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "acicular-inclusions",
+      "name_zh": "针状包裹体",
+      "aliases": [
+        "针状包裹体",
+        "acicular inclusions",
+        "needle inclusions",
+        "针晶包裹体"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "针状包裹体为独立晶粒或不同相，不能作为单颗粒主晶的线纹生成。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "sieve-texture",
+      "name_zh": "筛状结构",
+      "aliases": [
+        "筛状结构",
+        "sieve texture",
+        "sieve-textured plagioclase",
+        "筛状斜长石"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "自然筛状结构所要求的主晶、孔洞或其玻璃等填充物关系不能由当前单相模型验收。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "chiastolite-cross",
+      "name_zh": "空晶石十字包裹构造",
+      "aliases": [
+        "空晶石十字包裹构造",
+        "chiastolite cross",
+        "chiastolite",
+        "空晶石",
+        "十字包裹体"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_phases",
+      "status": "out_of_scope",
+      "reason": "十字构造由红柱石等主晶中的包裹物定义，涉及多物相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "cordierite-cyclic-twins"
+      ]
+    },
+    {
+      "id": "euhedral-form",
+      "name_zh": "自形",
+      "aliases": [
+        "自形",
+        "euhedral form",
+        "euhedral",
+        "idiomorphic",
+        "自形晶"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有试点未建立特定矿物晶面与切面轮廓的验收，不能以规则多边形证明自形程度。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "tourmaline-cross-section"
+      ]
+    },
+    {
+      "id": "subhedral-form",
+      "name_zh": "半自形",
+      "aliases": [
+        "半自形",
+        "subhedral form",
+        "subhedral",
+        "hypidiomorphic",
+        "半自形晶"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "半自形需区分保留晶面与非晶面边界，当前没有该指定形态的验证模型。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "anhedral-form",
+      "name_zh": "他形",
+      "aliases": [
+        "他形",
+        "anhedral form",
+        "anhedral",
+        "allotriomorphic",
+        "他形晶"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "他形外观不能由任意软边轮廓等价证明，当前缺少该形态专属验收。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "prismatic-form",
+      "name_zh": "柱状单晶",
+      "aliases": [
+        "柱状单晶",
+        "prismatic form",
+        "prismatic crystal",
+        "柱状",
+        "短柱状",
+        "长柱状"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "柱状三维晶体的指定切面与XPL响应未完整约束，不能从拉长二维形状直接宣称。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "tabular-form",
+      "name_zh": "板状单晶",
+      "aliases": [
+        "板状单晶",
+        "tabular form",
+        "tabular crystal",
+        "板状"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "板状单晶的切面、晶面及光学几何尚未有专属验收。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "platy-form",
+      "name_zh": "片状单晶",
+      "aliases": [
+        "片状单晶",
+        "platy form",
+        "platy crystal",
+        "片状"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "片状矿物的切面与解理和吸收方向关系未建立，不能仅生成扁平轮廓。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "acicular-form",
+      "name_zh": "针状单晶",
+      "aliases": [
+        "针状单晶",
+        "acicular form",
+        "acicular crystal",
+        "needle-shaped single crystal",
+        "针状"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "必须确认是一根连续单晶而非针晶集合；目前没有专属形态及光学验收。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "bladed-form",
+      "name_zh": "刀片状单晶",
+      "aliases": [
+        "刀片状单晶",
+        "bladed form",
+        "bladed crystal",
+        "lath-shaped",
+        "blade-shaped",
+        "刀片状",
+        "板条状"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "刀片或板条形态的矿物和切面关系未验证，不能用细长矩形替代诊断形态。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "basal-section",
+      "name_zh": "底面切面",
+      "aliases": [
+        "底面切面",
+        "basal section",
+        "basal cross-section",
+        "基面切面",
+        "横切面"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有试点未把底面切面、解理交角与光学轴关系绑定，不能以外形近似证明切面。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "pyroxene-basal-section"
+      ]
+    },
+    {
+      "id": "skeletal-crystal",
+      "name_zh": "骸晶",
+      "aliases": [
+        "骸晶",
+        "skeletal crystal",
+        "skeletal texture",
+        "骨架晶体",
+        "骸晶结构"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "骸晶连续性、三维骨架与切面响应未建模；若含其他填充相还会超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "hopper-crystal",
+      "name_zh": "漏斗状晶体",
+      "aliases": [
+        "漏斗状晶体",
+        "hopper crystal",
+        "hopper form",
+        "阶梯状凹陷晶体",
+        "漏斗晶"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "漏斗状凹陷与薄片截交的关系缺少专属证据和模型，不能用同心洞纹代替。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "embayed-outline",
+      "name_zh": "熔蚀港湾",
+      "aliases": [
+        "熔蚀港湾",
+        "embayed outline",
+        "embayment",
+        "resorbed outline",
+        "熔蚀外形",
+        "港湾状熔蚀"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "单纯熔蚀轮廓属于单晶候选，但当前未建立可验收形态；含新生反应矿物则直接超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "dendritic-single-crystal",
+      "name_zh": "树枝状单晶",
+      "aliases": [
+        "树枝状单晶",
+        "dendritic single crystal",
+        "dendritic crystal",
+        "树枝状"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "须证明分支属于一颗连续单晶；当前无法验收其晶格连续性及光学关系。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "rhombohedral-section",
+      "name_zh": "菱形截面",
+      "aliases": [
+        "菱形截面",
+        "rhombohedral section",
+        "rhombic cross-section",
+        "菱形薄片截面"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "二维菱形不能独自证明晶体形态或切面；当前缺少专属晶面—切面验收。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "hexagonal-section",
+      "name_zh": "六边形截面",
+      "aliases": [
+        "六边形截面",
+        "hexagonal cross-section",
+        "hexagonal section",
+        "六方截面",
+        "六角截面"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "六边形外轮廓不唯一对应六方晶系或某矿物，现有模型不能证明指定切面。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "tourmaline-triangular-section",
+      "name_zh": "电气石三角形截面",
+      "aliases": [
+        "电气石三角形截面",
+        "tourmaline triangular section",
+        "triangular tourmaline cross-section",
+        "半三角形电气石截面"
+      ],
+      "category": "single_crystal_morphology",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "电气石特殊截面有真实图，但现有试点不含其吸收及切面光学模型，不能仅凭外形生成。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "tourmaline-cross-section"
+      ]
+    },
+    {
+      "id": "radiating-aggregate",
+      "name_zh": "放射状集合体",
+      "aliases": [
+        "放射状集合体",
+        "radiating aggregate",
+        "radial aggregate",
+        "放射状"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "放射状集合体由多个向外生长的晶粒组成，不能用堇青石轮式双晶模型替代。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "spherulite"
+      ]
+    },
+    {
+      "id": "fibrous-bundle",
+      "name_zh": "束状集合体",
+      "aliases": [
+        "束状集合体",
+        "fibrous bundle",
+        "sheaf-like aggregate",
+        "束状",
+        "纤维束"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "束状集合体包含多根晶体，矿物相同也属于多颗粒。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "spherulitic-texture",
+      "name_zh": "球粒结构",
+      "aliases": [
+        "球粒结构",
+        "spherulitic texture",
+        "spherulite",
+        "球粒",
+        "球粒状结构"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "球粒由放射状微晶等组成，常包含不同物相，超出单颗粒范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "spherulite"
+      ]
+    },
+    {
+      "id": "orbicular-texture",
+      "name_zh": "球斑结构",
+      "aliases": [
+        "球斑结构",
+        "orbicular texture",
+        "orbicule",
+        "球状构造",
+        "球斑"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "球斑结构涉及围绕核心的多晶或多相层状关系，属于岩石尺度结构。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "ophitic-texture",
+      "name_zh": "辉绿结构",
+      "aliases": [
+        "辉绿结构",
+        "ophitic texture",
+        "ophitic",
+        "辉绿"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "辉绿结构需要辉石与被其包围的斜长石板条关系，属于多个矿物与颗粒。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "subophitic-texture",
+      "name_zh": "次辉绿结构",
+      "aliases": [
+        "次辉绿结构",
+        "subophitic texture",
+        "subophitic",
+        "次辉绿"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "次辉绿结构需要辉石和斜长石等不同颗粒的部分包围关系。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "intergranular-texture",
+      "name_zh": "粒间结构",
+      "aliases": [
+        "粒间结构",
+        "intergranular texture",
+        "粒间"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "粒间结构由不同晶粒之间的填隙关系定义，超出单颗粒范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "intersertal-texture",
+      "name_zh": "间隐结构",
+      "aliases": [
+        "间隐结构",
+        "intersertal texture",
+        "间隐"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "间隐结构含晶体之间的玻璃或细粒物质，属于多个颗粒或物相。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "trachytic-texture",
+      "name_zh": "粗面结构",
+      "aliases": [
+        "粗面结构",
+        "trachytic texture",
+        "trachytic alignment",
+        "流动定向板条"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "粗面结构需多个板条晶体的定向排列关系，属于多颗粒。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "cumulate-texture",
+      "name_zh": "堆积结构",
+      "aliases": [
+        "堆积结构",
+        "cumulate texture",
+        "cumulate",
+        "堆晶结构"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "堆积结构包含堆晶颗粒及粒间物质关系，属于岩石结构。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "granoblastic-texture",
+      "name_zh": "粒状变晶结构",
+      "aliases": [
+        "粒状变晶结构",
+        "granoblastic texture",
+        "polygonal granoblastic",
+        "等粒变晶结构"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "粒状变晶结构由多个晶粒和晶界关系定义，即使单矿物也超出范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "foliated-texture",
+      "name_zh": "定向片理组构",
+      "aliases": [
+        "定向片理组构",
+        "foliated texture",
+        "foliation",
+        "schistosity",
+        "片理",
+        "定向组构"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "片理和定向组构需要多个颗粒或矿物层的空间关系，属于岩石结构。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "porphyritic-texture",
+      "name_zh": "斑状结构",
+      "aliases": [
+        "斑状结构",
+        "porphyritic texture",
+        "phenocryst-groundmass texture",
+        "斑状"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "斑状结构需斑晶与细粒或玻璃质基质，不属于孤立单颗粒资产。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "glomeroporphyritic-texture",
+      "name_zh": "聚斑结构",
+      "aliases": [
+        "聚斑结构",
+        "glomeroporphyritic texture",
+        "glomerocryst",
+        "聚斑状结构"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "聚斑结构由多颗斑晶聚集形成，即使同一矿物仍超出单颗粒限制。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "clastic-sedimentary-texture",
+      "name_zh": "碎屑沉积组构",
+      "aliases": [
+        "碎屑沉积组构",
+        "clastic sedimentary texture",
+        "sedimentary fabric",
+        "碎屑结构",
+        "沉积组构"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "沉积碎屑、胶结物和颗粒排列需要多颗粒关系，且Atlas对此不是完整依据。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "oolitic-texture",
+      "name_zh": "鲕状结构",
+      "aliases": [
+        "鲕状结构",
+        "oolitic texture",
+        "ooid texture",
+        "鲕粒结构",
+        "鲕状"
+      ],
+      "category": "aggregates_rock_textures",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "鲕粒及其围绕核心的包壳与颗粒间关系不属于单一矿物单晶资产。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "anomalous-interference-colours",
+      "name_zh": "异常干涉色",
+      "aliases": [
+        "异常干涉色",
+        "anomalous interference colours",
+        "anomalous interference colors",
+        "异常干涉颜色"
+      ],
+      "category": "optical_modalities",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有固定理想延迟量模型未实现目标矿物造成异常干涉色的光谱与吸收行为。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "chlorite-anomalous-colours"
+      ]
+    },
+    {
+      "id": "anomalous-birefringence",
+      "name_zh": "异常双折射",
+      "aliases": [
+        "异常双折射",
+        "anomalous birefringence",
+        "anisotropic garnet",
+        "石榴子石异常双折射"
+      ],
+      "category": "optical_modalities",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "异常石榴子石等不能套用理想铁铝榴石全黑模型，现有模型未实现其分区光学响应。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": [
+        "garnet-anomalous-zoning"
+      ]
+    },
+    {
+      "id": "optic-axis-section",
+      "name_zh": "光轴切面",
+      "aliases": [
+        "光轴切面",
+        "optic-axis section",
+        "optic axis section",
+        "垂直光轴切面",
+        "沿光轴观察"
+      ],
+      "category": "optical_modalities",
+      "scope": "single_grain",
+      "status": "unsupported",
+      "reason": "现有模型未将指定切面与完整光轴方位、数值孔径及诊断过程绑定，不能以全黑图证明光轴切面。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "pleochroism",
+      "name_zh": "多色性",
+      "aliases": [
+        "多色性",
+        "pleochroism",
+        "pleochroic colour change",
+        "多色性变化"
+      ],
+      "category": "optical_modalities",
+      "scope": "other_modality",
+      "status": "out_of_scope",
+      "reason": "多色性需要PPL旋转时的方向吸收模型，当前XPL非吸收模型和输出范围不能表达。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "twinkling-relief",
+      "name_zh": "闪突起",
+      "aliases": [
+        "闪突起",
+        "twinkling relief",
+        "relief twinkling",
+        "twinkling",
+        "突起闪变"
+      ],
+      "category": "optical_modalities",
+      "scope": "other_modality",
+      "status": "out_of_scope",
+      "reason": "闪突起依赖PPL下折射率与介质及方向变化，当前XPL理想延迟模型不具备该观测方式。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "conoscopic-figure",
+      "name_zh": "锥光干涉图",
+      "aliases": [
+        "锥光干涉图",
+        "conoscopic interference figure",
+        "interference figure",
+        "锥光图",
+        "光轴干涉图"
+      ],
+      "category": "optical_modalities",
+      "scope": "other_modality",
+      "status": "out_of_scope",
+      "reason": "锥光观察涉及会聚光束和后焦面，不属于当前固定几何正交偏光颗粒图像。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "bse-imaging",
+      "name_zh": "背散射电子图像",
+      "aliases": [
+        "背散射电子图像",
+        "backscattered electron imaging",
+        "BSE",
+        "背散射电子",
+        "BSE图"
+      ],
+      "category": "optical_modalities",
+      "scope": "other_modality",
+      "status": "out_of_scope",
+      "reason": "BSE灰度由电子成像条件和成分等控制，属于其他成像方式，不能直接转成XPL亮度。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "cl-imaging",
+      "name_zh": "阴极发光图像",
+      "aliases": [
+        "阴极发光图像",
+        "cathodoluminescence imaging",
+        "CL",
+        "阴极发光",
+        "CL图"
+      ],
+      "category": "optical_modalities",
+      "scope": "other_modality",
+      "status": "out_of_scope",
+      "reason": "CL颜色或亮度属于发光成像响应，不是XPL干涉色，当前范围不生成。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "element-mapping",
+      "name_zh": "元素分布图",
+      "aliases": [
+        "元素分布图",
+        "element mapping",
+        "element map",
+        "EMP map",
+        "EDS map",
+        "元素图",
+        "成分图"
+      ],
+      "category": "optical_modalities",
+      "scope": "other_modality",
+      "status": "out_of_scope",
+      "reason": "元素图为分析或伪彩色图，不属于当前XPL资产输出，不能以图像颜色冒充成分真值。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "reflected-light-imaging",
+      "name_zh": "反射光图像",
+      "aliases": [
+        "反射光图像",
+        "reflected light imaging",
+        "reflected-light microscopy",
+        "反射偏光"
+      ],
+      "category": "optical_modalities",
+      "scope": "other_modality",
+      "status": "out_of_scope",
+      "reason": "反射光及不透明矿物观察需要不同光学模型与成像流程，超出当前透射XPL范围。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "opaque-mineral-behaviour",
+      "name_zh": "不透明矿物行为",
+      "aliases": [
+        "不透明矿物行为",
+        "opaque mineral behaviour",
+        "opaque mineral behavior",
+        "不透明矿物",
+        "opaque"
+      ],
+      "category": "optical_modalities",
+      "scope": "other_modality",
+      "status": "out_of_scope",
+      "reason": "透射XPL中的黑色不足以确证不透明矿物，当前试点不含其反射或透射吸收模型。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    },
+    {
+      "id": "micropoikilitic-texture",
+      "name_zh": "微嵌晶结构",
+      "aliases": [
+        "微嵌晶结构",
+        "微嵌晶",
+        "micropoikilitic texture",
+        "micro-poikilitic texture"
+      ],
+      "category": "intergrowth_inclusions",
+      "scope": "multiple_grains",
+      "status": "out_of_scope",
+      "reason": "微嵌晶若指微细晶粒被主晶包含的关系，仍为多颗粒；术语须结合来源确认，不能自动等同微文象或微花岗交生。",
+      "compatible_phases": [],
+      "compatible_minerals": [],
+      "incompatible_with": [],
+      "reference_ids": []
+    }
+  ]
+}
